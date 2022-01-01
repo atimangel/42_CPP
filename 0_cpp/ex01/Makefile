@@ -6,7 +6,7 @@
 #    By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 14:27:46 by snpark            #+#    #+#              #
-#    Updated: 2022/01/01 11:59:23 by snpark           ###   ########.fr        #
+#    Updated: 2022/01/01 12:12:38 by snpark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NAME	= phobe_book
 
 
 ./objs/%.o	: ./srcs/%.cpp
+	@mkdir -p objs
 	c++	$(flags) -c $< -o $@
 
 all			: $(NAME)
