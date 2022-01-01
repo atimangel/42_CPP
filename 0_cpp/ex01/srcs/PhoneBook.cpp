@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:31:56 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/01 11:58:44 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/01 13:10:34 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	PhoneBook::_print_column(std::string column)
 
 void	PhoneBook::_search_by_index(int index)
 {
-	if (index >= _index)
+	if (index >= _index || index < 0)
 		std::cout << index << " index is EMPTY" << std::endl;
 	else
 	{
