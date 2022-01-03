@@ -6,39 +6,30 @@
 #    By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 14:27:46 by snpark            #+#    #+#              #
-#    Updated: 2022/01/02 10:20:19 by snpark           ###   ########.fr        #
+#    Updated: 2022/01/03 07:00:09 by snpark           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-src		= megaphone.cpp
-
-flags	= -Wall -Werror -Wextra -std=c++98
-
-NAME	= megaphone
+src		= main.cpp\
 
 obj		= $(src:%.cpp=%.o)
 
-%.o		: %.cpp
+flags	= -Wall -Werror -Wextra -std=c++98
+
+NAME	= replace 
+
+%.o			: %.cpp
 	c++	$(flags) -c $< -o $@
 
-all		: $(NAME)
+all			: $(NAME)
 
-$(NAME)	: $(obj)
+$(NAME)		: $(obj)
 	c++	$(flags) $(obj) -o $(NAME)
 	
-clean	:
+clean		:
 	rm $(obj)
 
-fclean	: clean
+fclean		: clean
 	rm $(NAME)
 
-re		: fclean all
-
-test	: $(NAME)
-	./megaphone
-	./megaphone "shhhhh... I think the students are asleep..."
-	./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-	./megaphone hello world
-	./megaphone {a..z}
-	./megaphone {A..Z}
-		
+re			: fclean all

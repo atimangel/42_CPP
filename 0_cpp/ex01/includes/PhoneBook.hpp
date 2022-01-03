@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 11:00:43 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/01 11:58:30 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/01 15:05:48 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class PhoneBook
 		int				_index;
 		Contact			_list[8];
 	/*member function*/
+		void	_make_space(void);
 		void	_add_contact(void);
 		void	_search_by_index(int index);
 		void	_print_column(std::string column);

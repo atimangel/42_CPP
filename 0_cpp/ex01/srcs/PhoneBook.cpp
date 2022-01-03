@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 10:31:56 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/01 13:10:34 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/01 15:13:46 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,19 @@ void	PhoneBook::close(void)
 	_open = false;
 }
 
+void	PhoneBook::_make_space(void)
+{
+	for (int i = 0; i < _max - 1; ++i)
+	{
+		_list[i].setFirstName(_list[i + 1].firstName());
+		_list[i].setLastName(_list[i + 1].lastName());
+		_list[i].setNickName(_list[i + 1].nickName());
+		_list[i].setPhoneNumber(_list[i + 1].phoneNumber());
+		_list[i].setSecret(_list[i + 1].secret());
+	}
+	--_index;
+}
+
 void
 	PhoneBook::_add_contact(void)
 {
@@ -59,15 +72,15 @@ void
 	std::cout << "tell me your secret: ";
 	std::getline(std::cin, buffer);
 	_list[_index].setSecret(buffer);
-	++_index;
+	if (_index < _max)
+		++_index;
 }
 
 void	PhoneBook::add(void)
 {
 	if (_index == _max)
-		std::cout << "PhoneBook is FULL" << std::endl;
-	else
-		_add_contact();
+		_make_space();
+	_add_contact();
 }
 
 void	PhoneBook::_print_column(std::string column)
