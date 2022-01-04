@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:38:44 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/03 17:23:28 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/04 14:24:04 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,21 @@ void	Karen::complain(std::string level)
 
 void	Karen::filter(std::string level)
 {
-	if (getLevel(level) == 4)
-		std::cout << "[ not important ]" << std::endl;
-	else
-	{
+	if (getLevel(level) != 4)
 		std::cout << "[ " << level << " ]" << std::endl;
-		for (int i = getLevel(level); i < 4; ++i)
-			(this->*action[i])();
+	switch (getLevel(level))
+	{
+		case 0 :
+			complain("DEBUG");
+		case 1 :
+			complain("INFO");
+		case 2 :
+			complain("WARNING");
+		case 3 :
+			complain("ERROR");
+			break ;
+		case 4 :
+			std::cout << "[ not important ]" << std::endl;
 	}
 }
 

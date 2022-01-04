@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 16:28:10 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/02 20:14:25 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/04 09:33:17 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 class	HumanA
 {
 	public:
+		HumanA(void);
 		HumanA(std::string name, Weapon &weapon);
 		~HumanA(void);
 		void	attack(void);
 	private:
-		HumanA(void);
-		std::string	_name;
-		Weapon		&_weapon;
+		std::string		_name;
+		Weapon			&_weapon;
+		static Weapon	_default_weapon;
 };
 
 #endif
