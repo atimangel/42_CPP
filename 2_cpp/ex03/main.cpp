@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:48:28 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/11 16:00:24 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/11 16:06:57 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ int	main(void)
 	Point	e(2, 2);
 
 	std::cout << bsp(a, b, c, d) << std::endl;
+	std::cout << bsp(b, c, a, d) << std::endl;
+	std::cout << bsp(c, a, b, d) << std::endl;
+
+	std::cout << bsp(c, b, a, d) << std::endl;
+	std::cout << bsp(b, a, c, d) << std::endl;
+	std::cout << bsp(a, c, b, d) << std::endl;
+
 	std::cout << bsp(a, b, c, a) << std::endl;
 	std::cout << bsp(a, b, c, e) << std::endl;
 	return 0;
