@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:14:44 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/14 20:20:27 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/16 19:24:01 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 		ClapTrap & operator=(ClapTrap const &copy);
 		ClapTrap(ClapTrap const &copy);
-	protected:
 		ClapTrap(void);
+	protected:
 		std::string		_name;
 		unsigned int	_hitpoints;
 		unsigned int	_energy_points;

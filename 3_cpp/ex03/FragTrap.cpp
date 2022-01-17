@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:28:26 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/15 18:44:11 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/17 09:24:13 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 FragTrap::FragTrap(void) :
 	ClapTrap()
 {
-	_hitpoints = 100;
-	_energy_points = 100;
-	_attack_damage = 30;
+	_hitpoints = F_HP;
+	_energy_points = F_EP;
+	_attack_damage = F_AD;
 	std::cout << _name <<
 		" is reprogrammed by Hyperion as Interplantary Ninja Assassin ClaTrap (FragTrap constructed)"
 		<< std::endl;
@@ -26,9 +26,9 @@ FragTrap::FragTrap(void) :
 FragTrap::FragTrap(std::string name) :
 	ClapTrap(name)
 {
-	_hitpoints = 100;
-	_energy_points = 100;
-	_attack_damage = 30;
+	_hitpoints = F_HP;
+	_energy_points = F_EP;
+	_attack_damage = F_AD;
 	std::cout << _name <<
 		" is reprogrammed by Hyperion as Interplantary Ninja Assassin ClaTrap (FragTrap constructed)"
 		<< std::endl;

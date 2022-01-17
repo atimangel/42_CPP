@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 21:00:07 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/15 20:51:30 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/17 09:18:30 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ class DiamondTrap :
 		DiamondTrap(DiamondTrap const & copy);
 		DiamondTrap	&operator=(DiamondTrap const & copy);
 		~DiamondTrap(void);
-		void	attack(std::string const & target);
 		void	whoAmI(void);
+		using	ScavTrap::attack;
+	private:
+		std::string _name;
 };
 
 #endif

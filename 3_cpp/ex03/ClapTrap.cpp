@@ -6,25 +6,25 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:38:46 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/15 20:50:37 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/17 09:22:20 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void) :
-	_hitpoints(10),
-	_energy_points(10),
-	_attack_damage(0)
+	_hitpoints(C_HP),
+	_energy_points(C_EP),
+	_attack_damage(C_AD)
 {
 	std::cout << "ClapTrap " << _name << " is turn on" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) :
 	_name(name),
-	_hitpoints(10),
-	_energy_points(10),
-	_attack_damage(0)
+	_hitpoints(C_HP),
+	_energy_points(C_EP),
+	_attack_damage(C_AD)
 {
 	std::cout << "ClapTrap " << _name << " is turn on" << std::endl;
 }

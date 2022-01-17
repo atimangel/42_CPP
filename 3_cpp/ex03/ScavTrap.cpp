@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 11:10:16 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/15 20:46:08 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/17 09:25:22 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 ScavTrap::ScavTrap(void)
 	: ClapTrap()
 {
-	_hitpoints = 100;
-	_energy_points = 50;
-	_attack_damage = 20;
+	_hitpoints = S_HP;
+	_energy_points = S_EP;
+	_attack_damage = S_AD;
 	std::cout << _name << " work for Scav Gang (ScavTrap constructed)"<< std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 	: ClapTrap(name)
 {
-	_hitpoints = 100;
-	_energy_points = 50;
-	_attack_damage = 20;
+	_hitpoints = S_HP;
+	_energy_points = S_EP;
+	_attack_damage = S_AD;
 	std::cout << _name << " work for Scav Gang (ScavTrap constructed)"<< std::endl;
 }
 

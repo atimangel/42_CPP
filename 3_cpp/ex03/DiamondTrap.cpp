@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:59:48 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/16 10:19:28 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/17 09:28:22 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,28 @@
 
 DiamondTrap::DiamondTrap(void)
 {
-	Name = "_clap_name";
-	_hitpoints = FragTrap::_hitpoints;
-	_energy_points = ScavTrap::_energy_points;
-	_attack_damage = FragTrap::_attack_damage;
+	ClapTrap::_name = "_clap_name";
+	_hitpoints = F_HP;
+	_energy_points = S_EP;
+	_attack_damage = F_AD; 
 	std::cout << _name << " ScavTrap FragTrap FUSION!!! (DiamondTrap constructed)" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) :
-	ClapTrap(name)
+	ClapTrap(name + "_clap_name")
 {
-	Name = name + "_clap_name";
-	_hitpoints = FragTrap::_hitpoints;
-	_energy_points = ScavTrap::_energy_points;
-	_attack_damage = FragTrap::_attack_damage;
+	_name = name;
+	_hitpoints = F_HP;
+	_energy_points = S_EP;
+	_attack_damage = F_AD; 
 	std::cout << _name << " ScavTrap FragTrap FUSION!!! (DiamondTrap constructed)" << std::endl;
+	std::cout << "HP: " << _hitpoints << " |EP: " << _energy_points << " |AD: " << _attack_damage << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & copy)
 {
 	_name = copy._name;
-	Name = copy.Name;
+	ClapTrap::_name = copy.ClapTrap::_name;
 	_hitpoints = copy._hitpoints;
 	_energy_points = copy._energy_points;
 	_attack_damage = copy._attack_damage;
@@ -52,20 +53,15 @@ DiamondTrap::~DiamondTrap(void)
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &copy)
 {
 	_name = copy._name;
-	Name = copy.Name;
+	ClapTrap::_name = copy.ClapTrap::_name;
 	_hitpoints = copy._hitpoints;
 	_energy_points = copy._energy_points;
 	_attack_damage = copy._attack_damage;
 	return (*this);
 }
 
-void	DiamondTrap::attack(std::string const & target)
-{
-	ScavTrap::attack(target);
-}
-
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "I AM " << Name << std::endl;
+	std::cout << "I AM " << ClapTrap::_name << std::endl;
 }
 
