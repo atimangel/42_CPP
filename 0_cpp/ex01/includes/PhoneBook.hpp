@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 11:00:43 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/01 15:05:48 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:35:15 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <iomanip>
 #include "./Contact.hpp"
+#define	WIDTH 20
 
 class PhoneBook
 {
@@ -29,7 +30,7 @@ class PhoneBook
 		void	add(void);
 		void	open(void);
 		void	close(void);
-		bool	status(void);
+		bool	is_open(void);
 		void	search(void);
 	private:
 	/*member data*/

@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 08:40:01 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/01 12:01:06 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:38:49 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		anounce(void)
 	std::cout << "---------------------"
 		<< std::endl;
 	std::cout << '|' << "ADD | SEARCH | EXIT" << '|' << std::endl;
-	std::cout << "---------------------"
+	std::cout << "---------------------\n"
 		<< std::endl;
 }
 
@@ -29,11 +29,12 @@ int				main(void)
 	PhoneBook	book;
 	std::string	command;
 
-	anounce();
 	book.open();
-	while (book.status())
+	anounce();
+	std::cout.setf(std::ios_base::left);
+	while (book.is_open())
 	{
-		std::cout << "command: ";
+		std::cout << std::setw(WIDTH) << "command" << ": ";
 		if (!std::getline(std::cin, command))
 			book.close();
 		if (command == "ADD")
@@ -44,6 +45,7 @@ int				main(void)
 			book.close();
 		else
 			std::cout << command << ": is not a command" << std::endl;
+		std::cout << '\n';
 	}
 	std::cout << "PhoneBook close" << std::endl;
 }
