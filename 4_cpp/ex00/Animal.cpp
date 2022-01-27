@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 12:18:44 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/19 16:31:12 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/21 10:42:16 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 
 void	Animal::makeSound() const
 {
-	std::cout << "Animal: Sigh(animal's breath)\n";
+	std::cout << type << ": Sigh(animal's breath)\n";
 }
 
 const std::string	&Animal::getType() const

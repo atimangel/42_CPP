@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:18:45 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/19 16:31:53 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/21 10:42:46 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ Dog::~Dog()
 
 void	Dog::makeSound() const
 {
-	std::cout << "Dog: woof\n";
+	std::cout << type << ": woof\n";
 }

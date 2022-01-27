@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:51:20 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/19 16:30:50 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/21 10:42:34 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ Cat::~Cat()
 
 void	Cat::makeSound() const
 {
-	std::cout << "Cat: Meow\n";
+	std::cout << type << ": Meow\n";
 }

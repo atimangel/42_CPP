@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:04:09 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/21 08:40:35 by snpark           ###   ########.fr       */
+/*   Updated: 2022/01/21 11:04:53 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ AMateria	*MateriaSource::createMateria(const std::string &type)
 	for (int i = 0; i < _stock; ++i)
 		if (_source[i]->getType() == type)
 		{
-			std::cout << "create " << _source[i]->getType() << "\n";
+			std::cout << "create " << _source[i]->getType() << " materia\n";
 			return (_source[i]->clone());
 		}
 	std::cout << "unknown type [" << type << "]\n";
