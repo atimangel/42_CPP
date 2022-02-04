@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:03:21 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/04 14:32:40 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 15:52:17 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ bool	Convert::getType(char const * const source)
 	char	*end;
 	
 	_value = std::strtod(source, &end);
-	if (end[0] == 'f')
+	if (end[0] == 'f' && end != source)
 		_type = FLOAT;
 	else if (source[1] == '\0' && std::isprint(source[0]) && !std::isdigit(source[0]))
 	{
