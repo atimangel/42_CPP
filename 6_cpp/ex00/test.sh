@@ -1,50 +1,12 @@
-echo none
-./Convert
-echo a
-./Convert a
-echo {
-./Convert {
-echo q
-./Convert q
-echo 999
-./Convert 999
-echo 0
-./Convert 0
-echo 0.0
-./Convert 0.0
-echo 0.0f
-./Convert 0.0f
-echo 1
-./Convert 1
-echo 1.1
-./Convert 1.1
-echo 1.000001
-./Convert 1.000001
-echo 1.1f
-./Convert 1.1f
-echo 1.1l
-./Convert 1.1l
-echo 1.f
-./Convert 1.f
-echo 1.
-./Convert 1.
-echo -42
-./Convert -42
-echo nan
-./Convert nan
-echo NAN
-./Convert NAN
-echo nanf
-./Convert nanf
-echo 42.0f
-./Convert 42.0f
-echo inf
-./Convert inf
-echo Inf
-./Convert Inf
-echo -inf
-./Convert -inf
-echo +inf
-./Convert +inf
-echo -nan
-./Convert -nan
+#! /bin/zsh
+typeset -a array
+array=('' 'a' '{' '999' '0' '0.0' '0.0f' '1' '1.1' '1.000001' '1.1f' '1.1l' '1.f' '1.'
+	'-42' '-4.2' '-4.2f' 'nan' 'NAN' 'Nan' '-nan' '+nan' 'nanf' 'Nanf' '-nanf'
+'inf' '-inf' 'inff' '-inff' '+inf' '+inff' 'INF' 'Inf' 'Inff')
+	
+for i in $array
+do
+	echo ./Convert $i
+	./Convert $i
+	echo
+done

@@ -6,13 +6,12 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:03:21 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/04 12:47:41 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 14:32:40 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <cstdlib>
-#include <cerrno>
 #include <cstring>
 #include <iostream>
 #include <limits>
@@ -64,7 +63,7 @@ bool	Convert::getType(char const * const source)
 	_value = std::strtod(source, &end);
 	if (end[0] == 'f')
 		_type = FLOAT;
-	else if (source[1] == '\0' && std::isprint(source[0]))
+	else if (source[1] == '\0' && std::isprint(source[0]) && !std::isdigit(source[0]))
 	{
 		_type = CHAR;
 		_value = static_cast<double>(source[0]);
@@ -120,7 +119,7 @@ void	Convert::printInt()
 bool	Convert::canConvertToFloat()
 {
 	return ((_value <= std::numeric_limits<float>::max() &&
-			_value >= std::numeric_limits<float>::min()) ||
+			_value >= -std::numeric_limits<float>::max()) ||
 			_value == std::numeric_limits<double>::infinity() ||
 			_value == -std::numeric_limits<double>::infinity() ||
 			std::isnan(_value));

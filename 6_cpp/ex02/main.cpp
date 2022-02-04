@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:42:28 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/02 21:27:20 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 14:28:34 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	identify(Base* p)
 	B	*b;
 	C	*c;
 
-	//virtual??
 	a = dynamic_cast<A*>(p);
 	if (a)
 		std::cout << "A\n";
@@ -47,7 +46,7 @@ void	identify(Base* p)
 	if (c)
 		std::cout << "C\n";
 }
-//https://en.cppreference.com/w/cpp/language/dynamic_cast
+
 void	identify(Base& p)
 {
 	try
@@ -75,7 +74,9 @@ int	main(void)
 	Base	*ptr;
 
 	ptr = generate();
+	std::cout << "pinter: ";
 	identify(ptr);
+	std::cout << "refrence: ";
 	identify(*ptr);
 	delete	ptr;
 }
