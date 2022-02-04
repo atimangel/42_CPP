@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:03:21 by snpark            #+#    #+#             */
-/*   Updated: 2022/01/31 17:09:29 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 12:47:41 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ Convert	&Convert::operator=(const Convert &copy)
 
 Convert::Convert(char const * const source)
 {
+	if (Convert::verbose)
+		std::cout << "Convert costructor with source called\n";
 	if (source[0] == 0)
 		throw EmptyInput();
 	if (!this->getType(source))
@@ -62,12 +64,16 @@ bool	Convert::getType(char const * const source)
 	_value = std::strtod(source, &end);
 	if (end[0] == 'f')
 		_type = FLOAT;
+	else if (source[1] == '\0' && std::isprint(source[0]))
+	{
+		_type = CHAR;
+		_value = static_cast<double>(source[0]);
+		return (true);
+	}
 	else if (end[0] != '\0')
 		return (false);
 	if (end && !std::strcmp(source, "."))
 		_type = DOUBLE;
-	if (static_cast<int>(_value) <= 127 && static_cast<int>(_value) >= -128)
-		_type = CHAR;
 	else
 		_type = INT;
 	return (true);
