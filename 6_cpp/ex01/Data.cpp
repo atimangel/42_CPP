@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 10:00:27 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/02 20:33:40 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 13:04:48 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ Data	&Data::operator=(const Data &copy)
 {
 	this->_id = copy._id;
 	this->_organization = copy._organization;
-	std::cout << "Data assignment operator called\n";
+	if (Data::verbose)
+		std::cout << "Data assignment operator called\n";
 	return (*this);
 }
 

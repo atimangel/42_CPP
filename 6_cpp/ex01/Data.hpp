@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 09:47:04 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/02 19:37:09 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 13:04:17 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <cstdint>
 # include <iostream>
 
-class Data
+struct Data
 {
 	public:
 		static Data*		deserialization(uintptr_t raw);
@@ -33,7 +33,7 @@ class Data
 	private:
 		std::string	_id;
 		std::string	_organization;
-		static const bool	verbose = true;
+		static const bool	verbose = false;
 };
 
 std::ostream	&operator<<(std::ostream &os, Data data);

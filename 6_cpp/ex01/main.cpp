@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:10:53 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/02 19:43:00 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/04 13:07:15 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ int	main(void)
 	uintptr_t	serial;
 	Data		*recover;
 
-	serial = Data::serialization(&snpark);
-	std::cout << "serial: " << serial << '\n';
+	std::cout << "original\n";
+	std::cout << snpark << '\n';
 	std::cout << "ptr: " << &snpark << '\n'; 
+	serial = Data::serialization(&snpark);
+	std::cout << "serialization\n";
+	std::cout << "serial: " << serial << '\n';
 	recover = Data::deserialization(serial);
+	std::cout << "deserialization\n";
 	std::cout << *recover << '\n';
 	std::cout << "serial: " << Data::serialization(recover) << '\n';
 	std::cout << "ptr: " << recover << '\n';
