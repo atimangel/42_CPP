@@ -6,7 +6,7 @@
 /*   By: snpark <snpark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:35:55 by snpark            #+#    #+#             */
-/*   Updated: 2022/02/14 17:40:45 by snpark           ###   ########.fr       */
+/*   Updated: 2022/02/14 17:48:38 by snpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,45 @@ class	MutantStack : public std::stack<T, Container>
 		std::stack<T, Container>::container_type::const_reverse_iterator
 		const_reverse_iterator;
 
-	iterator	begin() _NOEXCEPT	{ return std::stack<T, Container>::c.begin();};
-	iterator	end()	_NOEXCEPT	{ return std::stack<T, Container>::c.end();};
-	iterator	cbegin() _NOEXCEPT	{ return std::stack<T, Container>::c.cbegin();};
-	iterator	cend()	_NOEXCEPT	{ return std::stack<T, Container>::c.cend();};
-	iterator	rbegin() _NOEXCEPT	{ return std::stack<T, Container>::c.rbegin();};
-	iterator	rend()	_NOEXCEPT	{ return std::stack<T, Container>::c.rend();};
-	iterator	crbegin() _NOEXCEPT	{ return std::stack<T, Container>::c.crbegin();};
-	iterator	crend()	_NOEXCEPT	{ return std::stack<T, Container>::c.crend();};
+	iterator	begin() _NOEXCEPT
+	{
+		return this->c.begin();
+	}
+
+	iterator	end()	_NOEXCEPT
+	{
+		return this->c.end();
+	}
+
+	const_iterator	cbegin() _NOEXCEPT
+	{
+		return this->c.cbegin();
+	}
+
+	const_iterator	cend()	_NOEXCEPT
+	{ 
+		return this->c.cend();
+	}
+
+	reverse_iterator	rbegin() _NOEXCEPT
+	{ 
+		return this->c.rbegin();
+	}
+
+	reverse_iterator	rend()	_NOEXCEPT
+	{
+		return this->c.rend();
+	}
+
+	const_reverse_iterator	crbegin() _NOEXCEPT
+	{
+		return this->c.crbegin();
+	}
+
+	const_reverse_iterator	crend()	_NOEXCEPT
+	{
+		return this->c.crend();
+	}
 
 	MutantStack() {}
 	MutantStack(MutantStack const &copy) {*this = copy;}
